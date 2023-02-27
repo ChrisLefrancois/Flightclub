@@ -1,5 +1,4 @@
 import requests
-
 import config
 
 
@@ -10,7 +9,9 @@ class DataManager:
 
     def get_data(self):
         response = requests.get(url=config.SHEETY_ENDPOINT, auth=(config.SHEETY_USERNAME, config.SHEETY_PASSWORD))
-        self.data = response.json()["prices"]
+        data = response.json()
+        print(data)
+        self.data = data["prices"]
         return self.data
 
     def update_codes(self):
@@ -26,4 +27,3 @@ class DataManager:
                 auth=(config.SHEETY_USERNAME, config.SHEETY_PASSWORD)
             )
 
-            print(response.text)
