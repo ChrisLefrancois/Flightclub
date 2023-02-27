@@ -28,14 +28,14 @@ destinations = {
     } for data in sheet_data}
 
 tommorow = datetime.now() + timedelta(1)
-six_month_date = datetime.now() + timedelta(6 * 30)
+nine_month_date = datetime.now() + timedelta(9 * 30)
 
 for destination_code in destinations:
     flight = flight_search.search_flight(
         ORIGIN_CITY,
         destination_code,
         date_from=tommorow,
-        date_to=six_month_date
+        date_to=nine_month_date
     )
 
     if flight is None:
