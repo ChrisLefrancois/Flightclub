@@ -10,7 +10,6 @@ class DataManager:
     def get_data(self):
         response = requests.get(url=config.SHEETY_ENDPOINT, auth=(config.SHEETY_USERNAME, config.SHEETY_PASSWORD))
         data = response.json()
-        print(data)
         self.data = data["prices"]
         return self.data
 
@@ -26,4 +25,5 @@ class DataManager:
                 json=new_data,
                 auth=(config.SHEETY_USERNAME, config.SHEETY_PASSWORD)
             )
+            data = response.json()
 
