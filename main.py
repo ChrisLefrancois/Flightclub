@@ -52,5 +52,5 @@ for destination_code in destinations:
                   f"{flight.destination_city}-{flight.destination_airport}, from {flight.departure_date}" \
                   f" to {flight.return_date}."
 
-        link = f"https://www.google.co.uk/flights?hl=en#flt={flight.origin_airport}.{flight.destination_airport}.{flight.departure_date}*{flight.destination_airport}.{flight.origin_airport}.{flight.return_date}"
+        link = f"https://www.google.com/travel/flights?q=Flights%20to%20{flight.destination_airport}%20from%20{flight.origin_airport}%20on%20{flight.departure_date}%20through%20{flight.return_date}"
         notification_manager.send_emails(emails, message, link)
